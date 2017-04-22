@@ -161,7 +161,7 @@ function makeNewUser(uid, train, callback) {
 }
 
 function getAllTrainsStatus(callback) {
-  request('http://81052766.ngrok.io/api/v1/trains', function(err, res, body) {
+  request('http://mtastat.us/api/trains', function(err, res, body) {
     if (err || res.statusCode !== 200) {
       callback("WHOOPS");
     } else {
@@ -175,7 +175,7 @@ function getAllTrainsStatus(callback) {
 }
 
 function getOneTrainStatus(train, callback) {
-  request(`http://81052766.ngrok.io/api/v1/trains/${train}`, function(err, res, body) {
+  request(`http://mtastat.us/api/trains/${train}`, function(err, res, body) {
     if (err || res.statusCode !== 200) {
       callback('There was an error looking up that information.');
     }
